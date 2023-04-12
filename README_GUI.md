@@ -13,7 +13,7 @@ in your work environment : you can view its documentation through [this link](ht
 4. run the following commands to run the app : - cd "all files that leads to pcd folder " <br />
                                                - cd pcd<br />
                                                - streamlit run app.py<br />
-###other info<br />
+### other info <br />
 * you can add any  animated images ( like the watermelon) using lottie animations : you will need to install the lottie library<br />
 
 ```
