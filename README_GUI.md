@@ -2,7 +2,7 @@
 an app that classifies watermelon seed x-ray images to triploid and tetraploid with a user interface <br />
 ## GUI <br />
 this is the initial version for the GUI <br />
-to view the GUI first you need : <br />
+to view the GUI first you need to : <br />
 1. download streamlit in your work environment <br />
 2. download this streamlit component <br />
 ```
