@@ -16,7 +16,7 @@ import numpy as np
 
 
 # Load the pre-trained model
-model = tf.keras.models.load_model('C:\Users\lenovo\model_AC(FinalVersion).h5')
+model = tf.keras.models.load_model('C:\\Users\\lenovo\\model_AC(FinalVersion).h5')
 ClassifyTest = False
 # Define the results list
 results = []
@@ -83,7 +83,7 @@ with st.container():
                     # Make a prediction using the pre-trained model
                     prediction = model.predict(np.expand_dims(data['image_data']/255,0))
                     # Get the predicted class label
-                    class_label = '3n' if prediction[0][0] < 0.5 else '4n'
+                    class_label = '3n' if prediction[0][0] < 0.86 else '4n'
                     if (class_label == '4n'):
                         TetraSum=TetraSum+1
                     else:

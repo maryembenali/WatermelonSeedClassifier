@@ -14,7 +14,7 @@ import webbrowser
 
 # Set page config
 st.set_page_config(
-    page_title="Seeds classifier",
+    page_title="Seed classifier",
     page_icon=":watermelon:",
     layout="wide",
     initial_sidebar_state="collapsed",
