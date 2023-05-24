@@ -27,7 +27,6 @@ def load_lottieurl(url: str):
     return r.json()
     
 
-
 container = st.container()
 container.width = 800
 with st.container():
@@ -35,13 +34,26 @@ with st.container():
     with col1:
         container1= st.container()
         container1.title("Welcome to Seed Classifier!")
-        container1.write("Classify watermelon  our state-of-the-art machine learning model.")
-        if container1.button("Start", key="my_button"):
+        container1.write("Classify watermelon  seeds  with our model.This app was Monitored by Limagrain group")
+        container2= st.container()
+        col11, col22,col33 = st.columns([1,1,1])
+        with col11:
+            st.write(" ");
+        with col22:
+            if st.button("Start", key="my_button"):
                 webbrowser.open_new_tab('http://localhost:8501/%20Watermelon%20classifier')
+        with col33 :
+            st.write(" ")
+       
     with col2:
         lottie_hello = load_lottieurl("https://assets8.lottiefiles.com/packages/lf20_8wpitnly.json") 
-        st_lottie(lottie_hello, height=600,width=600,key=None,)
-        
+        st_lottie(lottie_hello, height=600,width=600,key=None,)     
+# with st.container():
+#     col1, col2,col3,col4,col5 = st.columns([1,1,1,1,1])
+#     with col1:
+#         st.image('logo.png', width=100)
+#     with col2 :
+#         st.image('vilmo.png', width=100)
 
 # Add pages using st_pages
 show_pages(
@@ -52,5 +64,7 @@ show_pages(
         Page("aboutus.py", " About Us", ":?:"),
     ]
 )
+
+
 
 
