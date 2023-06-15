@@ -24,7 +24,7 @@ in your work environment : you can view its documentation through [this link](ht
 3. Join the model.h5 file in the folder containing all the files of the main branch  locally as it was too heavy to be uploaded on github <br />
 4. To run the app : - streamlit run Complete_Path/app.py <br />
 
-pandas Version: 1.4.4
-numpy Version: 1.23.5
-PIL
-Plotly Version: 5.9.0
+pandas Version: 1.4.4 <br />
+numpy Version: 1.23.5 <br />
+PIL <br />
+Plotly Version: 5.9.0 <br />
