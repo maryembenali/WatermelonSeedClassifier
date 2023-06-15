@@ -1,15 +1,13 @@
 # WatermelonSeedClassifier
 an app that classifies watermelon seed x-ray images to triploid and tetraploid with a user interface <br />
-## GUI <br />
 
-
-##Environment dependencies </br>
+## Environment dependencies </br>
 For the modeling phase , you need to create a seperate environment on anaconda different from the base env:
 - Python 3.7.16
-- libraries : - tensorflow Version: 2.10.0
-              - matplotlib Version: 3.5.2
-              - numpy Version: 1.21.5
-              - sk learn Version: 1.0.2 ( for the ml approch)
+- libraries : - tensorflow Version: 2.10.0</br>
+              - matplotlib Version: 3.5.2</br>
+              - numpy Version: 1.21.5</br>
+              - sk learn Version: 1.0.2 ( for the ml approch)</br>
 
 
 to view the GUI first you need to : <br />
