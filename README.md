@@ -152,6 +152,13 @@ while i <= sheet_obj.max_row:
         
 wb_obj.save('DeletedData.xlsx')
 ```
+#### Data Partitioning 
+- Training and Validation Set (90%):
+We allocated 90% of the dataset to the training and validation set. This large portion was used for training machine learning models, fine-tuning parameters, and ensuring optimal performance. A portion of the training set was reserved for validation to assess model generalization and prevent overfitting.
+
+- Test Set (10%):
+It remained separate during training and validation and was utilized to evaluate the final model's performance. By using unseen data for testing, we obtained an unbiased assessment of the model's ability to classify watermelon seeds accurately.
+
 
 ## Environment dependencies </br>
 ### Modeling
