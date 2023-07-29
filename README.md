@@ -26,7 +26,22 @@ The self-pollinating nature of triploid watermelons introduces uncertainty in se
 
 ### Goal 
 Our project aims to develop an automated computer tool using machine learning techniques to classify watermelon seeds as triploid or tetraploid, assisting experts in the process. The developed models will classify individual seeds independently, irrespective of surrounding seeds or external factors, providing a time-efficient and accurate seed selection process.
+## Needs Analysis
+### Actors
+Seed Technologist team in **Limagrain**
+### Functional Needs
+1. Read X-ray Images: The system reads X-ray images of watermelon seeds for analysis.
+2. Classify Seeds: The tool classifies watermelon seeds as triploid or tetraploid.
+3. Visualize Analysis Results: The results of the seed classification analysis are presented in a clear and accessible manner with a statistical chart.
+4. Save Data: The analyzed data, including classification results and related information, can be saved for future reference.
 
+### Non-Functional Needs 
+1. Accuracy: 
+2. Reliability: 
+3. Speed: 
+4. Robustness: 
+5. User-Friendly: 
+6. Scalability:
 
 ## Environment dependencies </br>
 ### Modeling
