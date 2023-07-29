@@ -13,10 +13,17 @@ This project is proposed by the R&D Department of Limagrain Group, under the gui
 
 The watermelon production industry is rapidly expanding and becoming increasingly favored for its profitability. Seedless watermelons are particularly sought after for their convenience, reduced risk of injury for children and the elderly, longer shelf life, smoother texture, and sweeter flavor compared to seeded varieties.
 
-However, obtaining seedless watermelons presents challenges due to their tendency to be triploid (3n chromosomes). To address this, pollination between diploid and tetraploid seeds is used to produce triploid watermelons. 
-infact the fruit of this pollination is a watermelon with seeds that gives later 3n watermelons.
- 
-The self-pollinating nature of triploid watermelons introduces uncertainty in seed classification since tetraploid plants can pollinate themselves giving seeds of 4n watermelons later , making it difficult to differentiate between triploid and tetraploid seeds.
+However, obtaining seedless watermelons presents challenges due to their tendency to be triploid (3n chromosomes). To address this, pollination between diploid and tetraploid plants is used to produce triploid watermelons. 
+<p align="center"> <img width=600 src="Image1.png" alt="pollination between diploid and tetraploid plants">
+
+Infact the fruit of this pollination is a watermelon with seeds that gives later 3n watermelons.
+|                                                                                                             |                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------| ----------------------------------------------------------------------------------------------- |
+| <p> <img width=375 src="Image2.png" alt="fruit of a pollination between diploid and tetraploid plants"> </p>|  <p> <img width=400 src="Image3.png" alt="a fruit of the collected seeds "> </p> |
+
+</br>
+The self-pollinating nature of triploid watermelons introduces uncertainty in seed classification since tetraploid plants can pollinate themselves giving seeds of 4n watermelons later , making it difficult to differentiate between triploid and tetraploid seeds. </br>
+
 ### Goal 
 Our project aims to develop an automated computer tool using machine learning techniques to classify watermelon seeds as triploid or tetraploid, assisting experts in the process. The developed models will classify individual seeds independently, irrespective of surrounding seeds or external factors, providing a time-efficient and accurate seed selection process.
 
