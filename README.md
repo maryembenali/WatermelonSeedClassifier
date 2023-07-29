@@ -36,12 +36,12 @@ Seed Technologist team in **Limagrain**
 4. Save Data: The analyzed data, including classification results and related information, can be saved for future reference.
 
 ### Non-Functional Needs 
-1. Accuracy: 
-2. Reliability: 
-3. Speed: 
-4. Robustness: 
-5. User-Friendly: 
-6. Scalability:
+1. Accuracy 
+2. Reliability
+3. Speed
+4. Robustness 
+5. User-Friendly
+6. Scalability
 ## Implementation
 ### Business understanding
 The "business understanding" phase is a crucial step in the data science process. It involves comprehending the commercial context of data collection and understanding the company's objectives. Close collaboration between technical and business teams ensures relevant data collection to achieve business goals.
@@ -65,6 +65,93 @@ The dataset comprises the following components:
 #### Data cleaning
 We initiated the data cleaning process, which involved preparing the images for the subsequent stages by eliminating unclassified or non-3n and non-4n class data. For this task, we utilized Openpyxl, an open-source Python library that allows reading and writing Excel files in xlsx/xlsm/xltx/xltm formats.
 Out of the total 2068 images, 1507 were images of triploid and tetraploid seeds. However, these images required cleaning to exclude inaccurate and irrelevant data, which we addressed in the later stages of the project.
+```
+# Acode example to delete images that have classes different from "3n" and 4n"
+import openpyxl
+# Call a Workbook() function of openpyxl 
+wb_obj = openpyxl.load_workbook('C:\\Users\\lenovo\\Desktop\\Projects\\PCD\\Dataset\\VC374-L2[158].xlsx')
+sheet_obj = wb_obj.active
+i = 2
+while i <= sheet_obj.max_row:
+    #print(f'i = {i}\tcell value (i, 1) is {sheet_obj.cell(row=i, column=7).value}')
+    if sheet_obj.cell(row=i, column=7).value not in ['3n','4n']:
+        sheet_obj.delete_rows(i)
+        # Note the absence of incremental.  Because we deleted a row, we want to stay on the same row because new data will show in the next iteration.
+    else:
+        i += 1
+    print(i)    
+        # Because the check failed, we can safely increment to the next row.
+
+wb_obj.save('CleanData.xlsx')
+```
+```
+#A code example to divide the cleaned data into two classes "3n" and "4n"
+import openpyxl
+import shutil
+import os
+
+# Load the Excel file
+wb_obj = openpyxl.load_workbook('C:\\Users\\lenovo\\Desktop\\Projects\\PCD\\Dataset\\CleanData.xlsx')
+sheet_obj = wb_obj.active
+
+# Create folders to store '3n' and '4n' data
+os.makedirs('C:\\Users\\lenovo\\Desktop\\Projects\\PCD\\Dataset\\3n', exist_ok=True)
+os.makedirs('C:\\Users\\lenovo\\Desktop\\Projects\\PCD\\Dataset\\4n', exist_ok=True)
+
+i = 2
+while i <= sheet_obj.max_row:
+    cell_value = sheet_obj.cell(row=i, column=7).value
+
+    if cell_value in ['3n', '4n']:
+        k = sheet_obj.cell(row=i, column=2).value
+        m = sheet_obj.cell(row=i, column=3).value
+        n = sheet_obj.cell(row=i, column=4).value
+
+        l = int(((k - 1) // 10) * 10)
+
+        if k < 10:
+            source_path = f'C:\\Users\\lenovo\\Desktop\\Projects\\PCD\\Dataset\\{l+1}-{l+10}\\{l+1}-{l+10}\\XRAY_L2_T0{k}_{m}0{n}.bmp'
+            target_path = f'C:\\Users\\lenovo\\Desktop\\Projects\\PCD\\Dataset\\3n\\XRAY_L2_T0{k}_{m}0{n}.bmp'
+        else:
+            source_path = f'C:\\Users\\lenovo\\Desktop\\Projects\\PCD\\Dataset\\{l+1}-{l+10}\\{l+1}-{l+10}\\XRAY_L2_T{k}_{m}0{n}.bmp'
+            target_path = f'C:\\Users\\lenovo\\Desktop\\Projects\\PCD\\Dataset\\4n\\XRAY_L2_T{k}_{m}0{n}.bmp'
+
+        shutil.copyfile(source_path, target_path)
+
+    i += 1
+```
+```
+#A code example to put the deleted images from the excel file in a seperate folder to keep track of our data
+import openpyxl
+import shutil
+wb_obj = openpyxl.load_workbook('CleanData.xlsx')
+sheet_obj = wb_obj.active
+i = 2
+j=2
+while i <= sheet_obj.max_row:
+    k=sheet_obj.cell(row=i, column=2).value
+    m=sheet_obj.cell(row=i, column=3).value
+    n=sheet_obj.cell(row=i, column=4).value
+    if k < 10 :
+        
+        if  (not ( os.path.exists(f'C:\\Users\\lenovo\\Desktop\\Projects\\PCD\\DataAfterCleaningVisual\\Deleted 3n\\XRAY_L2_T0{k}_{m}0{n}.bmp' )
+             or os.path.exists(f'C:\\Users\\lenovo\\Desktop\\Projects\\PCD\\DataAfterCleaningVisual\\Deleted 4n\\XRAY_L2_T0{k}_{m}0{n}.bmp'))):
+                sheet_obj.delete_rows(i)
+        else:
+            i+=1
+       
+    else:
+        if (not ( os.path.exists(f'C:\\Users\\lenovo\\Desktop\\Projects\\PCD\\DataAfterCleaningVisual\\Deleted 3n\\XRAY_L2_T{k}_{m}0{n}.bmp') 
+             or os.path.exists(f'C:\\Users\\lenovo\\Desktop\\Projects\\PCD\\DataAfterCleaningVisual\\Deleted 4n\\XRAY_L2_T{k}_{m}0{n}.bmp'))):
+                sheet_obj.delete_rows(i)
+        else:
+            i+=1
+    print("i= ",i)  
+    j+=1
+    print("j= ",j)
+        
+wb_obj.save('DeletedData.xlsx')
+```
 
 ## Environment dependencies </br>
 ### Modeling
