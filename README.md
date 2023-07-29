@@ -43,6 +43,10 @@ Seed Technologist team in **Limagrain**
 5. User-Friendly: 
 6. Scalability:
 ## Implementation
+### Business understanding
+The "business understanding" phase is a crucial step in the data science process. It involves comprehending the commercial context of data collection and understanding the company's objectives. Close collaboration between technical and business teams ensures relevant data collection to achieve business goals.
+
+During this phase, we worked with business stakeholders to identify needs, challenges, and propose a solution for automating watermelon seed classification. This alignment ensures an optimized classification process, contributing to the project's success.
 ### Data Understanding
 The dataset comprises the following components:
 <div>
@@ -56,6 +60,11 @@ The dataset comprises the following components:
 </br>
 
 </br>
+
+### Data preparation
+#### Data cleaning
+We initiated the data cleaning process, which involved preparing the images for the subsequent stages by eliminating unclassified or non-3n and non-4n class data. For this task, we utilized Openpyxl, an open-source Python library that allows reading and writing Excel files in xlsx/xlsm/xltx/xltm formats.
+Out of the total 2068 images, 1507 were images of triploid and tetraploid seeds. However, these images required cleaning to exclude inaccurate and irrelevant data, which we addressed in the later stages of the project.
 
 ## Environment dependencies </br>
 ### Modeling
