@@ -45,8 +45,18 @@ Seed Technologist team in **Limagrain**
 ## Implementation
 ### Data Understanding
 The dataset comprises the following components:
-- 2068 X-ray Images: These images capture the internal structures of watermelon seeds and serve as the primary input for the classification process. The images are grouped into six separate directories for organization.
-- Metadata Excel File: The accompanying Excel file contains essential metadata corresponding to the X-ray images. This metadata may include seed IDs, dimensions, weight, and other relevant information.
+<div>
+  <img align="left" src="Image4.png" alt="X-ray Seed Image Example" width="200">
+  <p><strong>2068 X-ray Images:</strong> These images capture the internal structures of watermelon seeds and serve as the primary input for the classification process. The images are grouped into six separate directories for organization.</p>
+</div>
+<div>
+  <img align="left" src="Image5.png" alt="Metadata Excel File" width="200">
+  <p><strong>Metadata Excel File:</strong> The accompanying Excel file contains essential metadata corresponding to the X-ray images. This metadata may include seed IDs, dimensions, weight, and other relevant information.</p>
+</div>
+</br>
+
+</br>
+
 ## Environment dependencies </br>
 ### Modeling
 For the modeling phase , you need to create a seperate environment on anaconda different from the base env:
