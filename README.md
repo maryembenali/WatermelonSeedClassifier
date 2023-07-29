@@ -42,7 +42,11 @@ Seed Technologist team in **Limagrain**
 4. Robustness: 
 5. User-Friendly: 
 6. Scalability:
-
+## Implementation
+### Data Understanding
+The dataset comprises the following components:
+- 2068 X-ray Images: These images capture the internal structures of watermelon seeds and serve as the primary input for the classification process. The images are grouped into six separate directories for organization.
+- Metadata Excel File: The accompanying Excel file contains essential metadata corresponding to the X-ray images. This metadata may include seed IDs, dimensions, weight, and other relevant information.
 ## Environment dependencies </br>
 ### Modeling
 For the modeling phase , you need to create a seperate environment on anaconda different from the base env:
