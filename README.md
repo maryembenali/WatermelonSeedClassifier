@@ -158,6 +158,27 @@ We allocated 90% of the dataset to the training and validation set. This large p
 
 - Test Set (10%):
 It remained separate during training and validation and was utilized to evaluate the final model's performance. By using unseen data for testing, we obtained an unbiased assessment of the model's ability to classify watermelon seeds accurately.
+#### Segmentation + Feature extraction (approch 1 : without Neural Networks)
+In the **segmentation** phase, we employed various techniques to partition the watermelon seed images and extract meaningful regions for further analysis.
+- **Edge Detection**: We utilized edge detection algorithms to identify and highlight the edges and boundaries of the watermelon seeds. This technique allowed us to distinguish the seeds from the background and provided essential information for accurate segmentation.
+
+- **Adaptive Thresholding**: By using adaptive thresholding, we dynamically adjusted the threshold values for different image regions. This adaptive approach improved the accuracy of segmentation, even under varying lighting conditions or image noise.
+
+- **Region-Based Segmentation**: To group pixels with similar characteristics, we employed region-based segmentation. This technique helped form coherent regions corresponding to individual watermelon seeds, enabling precise delineation and effective separation.
+
+**Extraction of Features:**
+In the feature extraction stage, we utilized the following methods to capture relevant information from the segmented regions:
+
+- **Histogram of Oriented Gradients (HOG)**: HOG provided a powerful approach to describe the local gradient directions in the watermelon seed regions. It allowed us to extract distinctive shape and texture features, contributing to accurate classification.
+
+- **Inverse Fourier Transform (IFT)**: By applying the Inverse Fourier Transform, we converted frequency domain information back to the spatial domain. This transformation revealed significant patterns and structures, enabling us to represent the seeds effectively.
+
+- **Dimensionality Reduction with PCA**: To optimize classification performance, we employed Principal Component Analysis (PCA) for dimensionality reduction. This technique reduced the feature space while retaining crucial information, resulting in improved efficiency and accuracy in our classification models.
+
+### Modeling and evaluation
+<p> <img width=800 src="Image7.png" > </p>
+
+
 
 
 ## Environment dependencies </br>
