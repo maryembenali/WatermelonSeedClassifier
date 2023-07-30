@@ -376,18 +376,17 @@ We utilized the Streamlit framework to develop the user interface for our applic
 ### Home Page
 
 Upon opening the application, users are greeted with a welcome message on the home page of our interface. Users have the option to initiate their experience by clicking the "Start" button. During this time, our application loads the pre-trained classification model and prepares the graphical user interface (GUI).
-  <p> <img width=300 src="1.png" > </p> 
+  <p> <img width=600 src="1.PNG" > </p> 
 
 ### Main Page
 
 Once the loading is complete, users find themselves on the main page, where they can classify a batch of seed images. The first step is to upload the images using the "Browse Files" button. The uploaded images are then displayed below, with a "Loaded" indicator confirming the completion of this phase. Users can now proceed to classify the images in a single step directly. Additionally, they can access statistics on the batch data and save the classification result in an Excel file created during the classification phase. 
-  <p> <img width=300 src="2.png" > </p> 
-    <p> <img width=300 src="3.png" > </p> 
+  <p> <img width=600 src="2.PNG" > </p> 
+    <p> <img width=600 src="3.PNG" > </p> 
 
 ### Sidebar Menu
 This section facilitates easy navigation to different pages of the application.
-  <p> <img width=300 src="4.png" alt =" overview of the main page with the side bar" > </p> 
-
+  <p> <img width=600 src="4.PNG" alt =" overview of the main page with the side bar" > </p> 
 
 ## Environment dependencies </br>
 ### Modeling
@@ -409,10 +408,17 @@ streamlit Version: 1.21.0
 pip install st-pages 
 ``` 
 in your work environment : you can view its documentation through [this link](https://github.com/blackary/st_pages ) <br />
-3. Join the model.h5 file in the folder containing all the files of the main branch  locally as it was too heavy to be uploaded on github <br />
-4. To run the app : - streamlit run Complete_Path/app.py <br />
+3. download [aboutus.py](aboutus.py) [app.py](app.py) [bye.json](bye.json) [results.xlsx](results.xlsx) [watermelon.json](watermelon.json) [watermelon.py](watermelon.py) and add them to your work folder
+4. Join the model.h5 file in your work folder containing all the files of the main branch  locally as it was too heavy to be uploaded on github <br />
+5. To run the app : - streamlit run Complete_Path/app.py <br />
 
 pandas Version: 1.4.4 <br />
 numpy Version: 1.23.5 <br />
 PIL <br />
 Plotly Version: 5.9.0 <br />
+## Conclusion
+This project successfully met the expectations of Limagrain by developing an application for the automatic classification of watermelon seeds based on their ploidy (triploids and tetraploids). Throughout the project, we studied various classification methods and ultimately implemented a neural network-based approach for accurate grain classification.
+
+This project proved to be a rewarding learning experience, allowing us to apply theoretical knowledge to real-world challenges. As a future prospect, we aim to enhance the relevance and performance of the application by exploring more advanced algorithms for data processing and leveraging a significantly larger dataset.
+
+We believe that this application will contribute positively to seed classification processes, facilitating better seed selection and supporting Limagrain's objectives in the field of agriculture and seed technology.
