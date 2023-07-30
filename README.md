@@ -322,11 +322,52 @@ model.add(Dense (1, activation='sigmoid'))
   <p> <img width=500 src="IM4.PNG" > </p> </br>
   
 - We tested this model on a test set that was not used in training .The results were as follows:
-  <p> <img width=200 src="IM5.png" > </p> 
-- Then we added an l2 regularizer in the first layer and trained the model
+  <p> <img width=300 src="IM5.png" > </p> 
+- Then we added an l2 regularizer in the first layer to reduce **overfitting** and trained the model
 - The results on the test set were as follows:
-    <p> <img width=600 src="IM6.PNG" > </p> 
+    <p> <img width=300 src="IM6.png" > </p> 
 - The test results were not favorable as you can see so we chose to remove the doubtful images and train our new dataset on the model with the l2 regularizer and see the new results
+<p> <img width=500 src="IM7.png" > </p> 
+### Confusion Matrix for Class 4N (Predicted vs. Actual)
+
+|                | Predicted 4N | Predicted 3N |
+|----------------|--------------|--------------|
+| Actual 4N      |      67      |       8      |
+| Actual 3N      |       9      |      66      |
+
+### Metrics for Class 4N
+
+Precision = 67 / (67 + 8) = 0.8933
+
+Recall = 67 / (67 + 9) = 0.8813
+
+F1 Score = 2 * (Precision * Recall) / (Precision + Recall) = 0.8873
+
+F2 Score = 5 * (Precision * Recall) / (4 * Precision + Recall) = 0.8859
+
+#### Confusion Matrix for Class 3N (Predicted vs. Actual)
+
+|                | Predicted 3N | Predicted 4N |
+|----------------|--------------|--------------|
+| Actual 3N      |      66      |       9      |
+| Actual 4N      |       8      |      67      |
+
+#### Metrics for Class 3N
+
+Precision = 66 / (66 + 9) = 0.88
+
+Recall = 66 / (66 + 8) = 0.8919
+
+F1 Score = 2 * (Precision * Recall) / (Precision + Recall) = 0.8857
+
+F2 Score = 5 * (Precision * Recall) / (4 * Precision + Recall) = 0.8895
+
+#### Ensemble de Test Summary
+
+Total Test Images: 150
+- Class 4N Images: 75
+- Class 3N Images: 75
+
 
 
 
