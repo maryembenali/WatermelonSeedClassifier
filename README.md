@@ -270,7 +270,29 @@ keras.layers.Dense(10, activation='sigmoid') #Output layer
   keras.layers.Dense(10, activation='sigmoid', kernel_regularizer=l1(0.01)) #Output layer
   ```
 
-<p> <img width=800 src="IM1.PNG" > </p>
+<p> <img width=800 src="IM1.PNG" > </p> </br>
+
+- We introduced a new version of the LeNet-5 architecture, named "lenet_5_model," with several improvements for watermelon seed classification:
+ 
+ 
+``` lenet_5_model = keras.models.Sequential([
+    keras.layers.Conv2D(6, kernel_size=5, strides=1, activation='relu', input_shape=img_size + (3,), padding='same'),  
+    keras.layers.AveragePooling2D(),  
+    keras.layers.Conv2D(16, kernel_size=5, strides=1, activation='relu', padding='valid'),  
+    keras.layers.AveragePooling2D(),  
+    keras.layers.Flatten(),  
+    keras.layers.Dense(units=120, activation='relu'),  
+    keras.layers.Dense(units=84, activation='relu'),  
+    keras.layers.Dropout(0.25),
+    keras.layers.Dense(units=2, activation='softmax')  # Output layer
+])
+```
+</br>
+This version includes an additional convolutional layer (layer 6) with 120 filters and a ReLU activation function. It also has two fully connected layers (layers 7 and 8) with 120 and 84 units, respectively, before the output layer.
+In contrast to the first architecture, which had an output layer with 10 units and a sigmoid activation function, the second architecture has an output layer with 2 units and a softmax activation function. Both architectures share the LeNet-5 foundation but differ in the number of layers, units, and activation functions used in the output layer.
+
+- In our experiments, we tested the second version with a modified training set by applying data augmentations, including shear_range=0.2, zoom_range=0.2, and horizontal_flip=True.
+- However, this version exhibited slow training progress and challenges with early stopping. We continue to refine the architecture and training process to achieve optimal watermelon seed classification results.
 
 
 
