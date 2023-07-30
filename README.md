@@ -322,10 +322,10 @@ model.add(Dense (1, activation='sigmoid'))
   <p> <img width=500 src="IM4.PNG" > </p> </br>
   
 - We tested this model on a test set that was not used in training .The results were as follows:
-  <p> <img width=300 src="IM5.png" > </p> 
+  <p> <img width=500 src="IM5.png" > </p> 
 - Then we added an l2 regularizer in the first layer to reduce **overfitting** and trained the model
 - The results on the test set were as follows:
-    <p> <img width=300 src="IM6.png" > </p> 
+    <p> <img width=500 src="IM6.png" > </p> 
 - The test results were not favorable as you can see so we chose to remove the doubtful images and train our new dataset on the model with the l2 regularizer and see the new results
 <p> <img width=500 src="IM7.PNG" > </p> 
 ### Confusion Matrix for Class 4N (Predicted vs. Actual)
