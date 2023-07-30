@@ -327,7 +327,7 @@ model.add(Dense (1, activation='sigmoid'))
 - The results on the test set were as follows:
     <p> <img width=300 src="IM6.png" > </p> 
 - The test results were not favorable as you can see so we chose to remove the doubtful images and train our new dataset on the model with the l2 regularizer and see the new results
-<p> <img width=500 src="IM7.png" > </p> 
+<p> <img width=500 src="IM7.PNG" > </p> 
 ### Confusion Matrix for Class 4N (Predicted vs. Actual)
 
 |                | Predicted 4N | Predicted 3N |
@@ -368,26 +368,25 @@ Total Test Images: 150
 - Class 4N Images: 75
 - Class 3N Images: 75
 
+- you can find the final work on the model [here](Model_AC.ipynb)
+## Graphical User Interface (GUI)
 
+We utilized the Streamlit framework to develop the user interface for our application. In this section, we present the approach taken for its design and the implemented features.
 
+### Home Page
 
+Upon opening the application, users are greeted with a welcome message on the home page of our interface. Users have the option to initiate their experience by clicking the "Start" button. During this time, our application loads the pre-trained classification model and prepares the graphical user interface (GUI).
+  <p> <img width=300 src="1.png" > </p> 
 
+### Main Page
 
+Once the loading is complete, users find themselves on the main page, where they can classify a batch of seed images. The first step is to upload the images using the "Browse Files" button. The uploaded images are then displayed below, with a "Loaded" indicator confirming the completion of this phase. Users can now proceed to classify the images in a single step directly. Additionally, they can access statistics on the batch data and save the classification result in an Excel file created during the classification phase. 
+  <p> <img width=300 src="2.png" > </p> 
+    <p> <img width=300 src="3.png" > </p> 
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
+### Sidebar Menu
+This section facilitates easy navigation to different pages of the application.
+  <p> <img width=300 src="4.png" alt =" overview of the main page with the side bar" > </p> 
 
 
 ## Environment dependencies </br>
