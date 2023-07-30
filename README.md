@@ -1,4 +1,3 @@
-![image](https://github.com/maryembenali/WatermelonSeedClassifier/assets/95877355/74fa928b-a7e1-43b4-aacb-666b8aa29276)# WatermelonSeedClassifier
 ### Project context
 The Watermelon Seed Classifier project is a result of the Validation of Conception and Development project module at ENSI School for the second semester of the second year. </br> </br>
 <p align="center"> <img width=120 src="https://ensi.rnu.tn/stylesheets/images/header/header_logo.png" alt="Engineering School of Computer Science Logo "> </p>  </br> </br>
@@ -307,10 +306,23 @@ In contrast to the first architecture, which had an output layer with 10 units a
   
 
 - Despite not seeing substantial progress in the key metrics, including accuracy, validation accuracy, loss, and validation loss rates, we haven't explored other evaluation metrics or techniques yet. Currently, our focus is on optimizing the model architecture and hyperparameters to improve overall performance. As we make advancements, we will consider exploring additional evaluation methods to ensure a comprehensive assessment of our watermelon seed classification model.
-- **Next step**  We  built a custom CNN model and trained the dataset on it .
-  <p> <img width=600 src="IM4.PNG" > </p> 
+- **Next step**  We  built a custom CNN model and trained the dataset on it : </br>
+
+``` model.add(Conv2D (32, (2,2),1,activation='relu', input_shape=(256,256,3)))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+model.add(Conv2D(64, (2,2),1,activation='relu'))
+model.add(MaxPooling2D())
+model.add(Conv2D(128, (2,2),1,activation='relu'))
+model.add(MaxPooling2D())
+model.add(Flatten())
+model.add(Dense (256, activation= 'relu'))
+model.add(Dense (1, activation='sigmoid'))
+```
+</br>
+  <p> <img width=500 src="IM4.PNG" > </p> </br>
+  
 - We tested this model on a test set that was not used in training .The results were as follows:
-  <p> <img width=600 src="IM5.png" > </p> 
+  <p> <img width=200 src="IM5.png" > </p> 
 - Then we added an l2 regularizer in the first layer and trained the model
 - The results on the test set were as follows:
     <p> <img width=600 src="IM6.PNG" > </p> 
