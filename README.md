@@ -293,7 +293,9 @@ In contrast to the first architecture, which had an output layer with 10 units a
 
 - In our experiments, we tested the second version with a modified training set by applying data augmentations, including shear_range=0.2, zoom_range=0.2, and horizontal_flip=True.
 - However, this version exhibited slow training progress and challenges with early stopping. We continue to refine the architecture and training process to achieve optimal watermelon seed classification results.
-
+- we added a **Dropout layer**
+- the result wasn't  as good as we expected:
+<p> <img width=600 src="IM2.PNG" > </p> </br>
 
 
 
