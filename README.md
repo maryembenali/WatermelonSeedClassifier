@@ -307,6 +307,9 @@ In contrast to the first architecture, which had an output layer with 10 units a
   
 
 - Despite not seeing substantial progress in the key metrics, including accuracy, validation accuracy, loss, and validation loss rates, we haven't explored other evaluation metrics or techniques yet. Currently, our focus is on optimizing the model architecture and hyperparameters to improve overall performance. As we make advancements, we will consider exploring additional evaluation methods to ensure a comprehensive assessment of our watermelon seed classification model.
+- **Next step**  We  built a custom CNN model and trained the dataset on it . 
+
+
 
   
 
