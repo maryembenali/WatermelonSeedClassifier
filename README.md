@@ -252,6 +252,30 @@ Inspired by the success of VGG16 and ResNet50, we developed a new modified LeNet
 ])
 ```
 
+<p align="center"> <img width=800 src="IM0.PNG" > </p>
+As we may notice the model does not perform well.
+- we added a Dropout Layer :
+the Model Architecture became :
+
+```
+lenet_5_model = keras.models.Sequential([
+    keras.layers.Conv2D(6, kernel_size=5, strides=1,  activation='relu', input_shape=img_size + (3,), padding='same'), 
+    keras.layers.AveragePooling2D(), 
+    keras.layers.Conv2D(16, kernel_size=5, strides=1, activation='relu', padding='valid'), 
+    keras.layers.AveragePooling2D(), 
+    keras.layers.Conv2D(120, kernel_size=5, strides=1, activation='relu', padding='valid'), 
+    keras.layers.Flatten(), #Flatten    
+    keras.layers.Dense(84, activation='relu'),
+    keras.layers.Dropout(0.25),
+    keras.layers.Dense(10, activation='sigmoid') #Output layer
+])
+```
+- No significant improvement
+- So we removed the **Dropout Layer** and added an **l1 regularizer** in the output layer
+  ```
+  keras.layers.Dense(10, activation='sigmoid', kernel_regularizer=l1(0.01)) 
+  ```
+
 
 
 
