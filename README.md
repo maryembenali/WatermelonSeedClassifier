@@ -252,23 +252,24 @@ Inspired by the success of VGG16 and ResNet50, we developed a new modified LeNet
 ])
 ```
 <p> <img width=800 src="IM0.PNG" > </p>
-- the model did not perform well so we added a **Dropout Layer** 
-the new architecture became:
-``` 
-lenet_5_model = keras.models.Sequential([
-    keras.layers.Conv2D(6, kernel_size=5, strides=1,  activation='relu', input_shape=img_size + (3,), padding='same'), #C1
-    keras.layers.AveragePooling2D(), #S2
-    keras.layers.Conv2D(16, kernel_size=5, strides=1, activation='relu', padding='valid'), #C3
-    keras.layers.AveragePooling2D(), #S4
-    keras.layers.Conv2D(120, kernel_size=5, strides=1, activation='relu', padding='valid'), #C5
-    keras.layers.Flatten(), #Flatten    
-    keras.layers.Dense(84, activation='relu'),#F6
-    keras.layers.Dropout(0.25),
-    keras.layers.Dense(10, activation='sigmoid') #Output layer
-])
+- the model did not perform well so we added a Dropout Layer </br> 
+the new architecture became: </br>
+
 ```
+keras.layers.Dense(84, activation='relu'),
+keras.layers.Dropout(0.25),
+keras.layers.Dense(10, activation='sigmoid') #Output layer   
+```
+
+</br>
+
 - No significant change
 - We removed the Dropout Layer and added a L1 regularizer :
+  </br>
+  ```
+  keras.layers.Dense(10, activation='sigmoid', kernel_regularizer=l1(0.01)) #Output layer
+  ```
+
 <p> <img width=800 src="IM1.PNG" > </p>
 
 
