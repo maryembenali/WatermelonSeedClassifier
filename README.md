@@ -175,8 +175,86 @@ In the feature extraction stage, we utilized the following methods to capture re
 
 - **Dimensionality Reduction with PCA**: To optimize classification performance, we employed Principal Component Analysis (PCA) for dimensionality reduction. This technique reduced the feature space while retaining crucial information, resulting in improved efficiency and accuracy in our classification models.
 
-### Modeling and evaluation
+## Strategy 1
+
+### Image Processing:
+- We used adaptive thresholding with a block size of 11 and a constant C of 2.
+- An illustrative example with a reference image was provided for clarity.
+
+### Feature Extraction:
+- Histogram of Oriented Gradients (HOG) was chosen to extract image characteristics.
+
+### Modeling:
+- The model used adaptive thresholding (Adaptive thresh mean) for preprocessing.
+- Edge detection was applied to enhance image quality.
+- HOG was used for feature representation based on local luminance gradients.
+- Principal Component Analysis (PCA) reduced dimensionality to improve classification performance.
+- Random Forest classifier was employed for classification.
+
+### Results and Interpretation:
+- The model showed overfitting, with a training accuracy of 1.0 and validation accuracy of 0.66.
+- The lower test accuracy of 0.59 indicated poor generalization to new data.
+
+## Strategy 2
+
+### Modeling:
+- SVM was used as the classification algorithm instead of Random Forest.
+
+### Results and Interpretation:
+- The model demonstrated better generalization, with a test accuracy of 0.75.
+
+## Strategy 3
+
+### Image Processing:
+- Adaptive thresholding was changed to "Adaptive thresh gaussian" with specific block size and constant C.
+
+### Feature Extraction:
+- The Inverse Fourier Transform (IFT) was used instead of HOG for feature extraction.
+
+### Modeling:
+- The third model was similar to the second, with different image processing and feature extraction techniques.
+
+### Results and Interpretation:
+- The model's performance was comparable to the second strategy.
+
+## Strategy 4
+
+### Image Processing:
+- Edge detection was replaced with region-based segmentation, setting the starting point and threshold.
+
+### Modeling:
+- The fourth model differed only in the image processing technique from the third model.
+
+### Results and Interpretation:
+- The test accuracy decreased to 0.64, suggesting lower generalization compared to previous models.
+
 <p> <img width=800 src="Image7.png" > </p>
+Upon evaluating the results, we concluded that machine learning alone, with a maximum accuracy of 0.75, was not sufficient for our project. As a result, we will proceed with deep learning, specifically neural networks, to achieve higher precision and accuracy.
+
+### modeling with Neural Networks:
+For the neural network strategy, we explored transfer learning using pre-trained models as our first step in classification. The following models were evaluated:
+| Model Number | Model Name | Test Images Count | Test Accuracy |
+|--------------|------------|-------------------|---------------|
+| 1            | VGG16      | 150               | 0.827         |
+| 2            | ResNet50   | 150               | 0.789         |
+
+- These results motivated us to delve further into the neural network strategy, continuing our pursuit of enhanced accuracy and generalization.
+Inspired by the success of VGG16 and ResNet50, we developed a new modified LeNet-5 architecture (v1) tailored to our watermelon seed classification task. The modifications involved using the sigmoid activation function in the output layer and employing average pooling instead of max pooling in the subsampling layers.
+```lenet_5_model = keras.models.Sequential([
+    keras.layers.Conv2D(6, kernel_size=5, strides=1, activation='relu', input_shape=img_size + (3,), padding='same'),
+    keras.layers.AveragePooling2D(),
+    keras.layers.Conv2D(16, kernel_size=5, strides=1, activation='relu', padding='valid'),
+    keras.layers.AveragePooling2D(),
+    keras.layers.Conv2D(120, kernel_size=5, strides=1, activation='relu', padding='valid'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(84, activation='relu'),
+    keras.layers.Dense(10, activation='sigmoid')  # Output layer
+])
+```
+
+
+
+
 
 
 
