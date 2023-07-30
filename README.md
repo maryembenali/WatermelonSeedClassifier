@@ -296,8 +296,20 @@ In contrast to the first architecture, which had an output layer with 10 units a
 - we added a **Dropout layer**
 - the result wasn't  as good as we expected:
 <p> <img width=600 src="IM2.png" > </p> </br>
+
 - Trainingset is not modified in this case ( no data augmentation) + drop out layer 
-<p> <img width=600 src="IM3.png" > </p> </br>
+<p> <img width=600 src="IM3.PNG" > </p> 
+
+- We removed dropout layer and added L1 but it gave worse results
+
+
+- Also , We attempted various strategies to improve the model, such as adjusting the learning rate, adding batch normalization, and trying different activation functions like SELU and ELU. Unfortunately, none of these modifications resulted in better performance, and in some cases, the results worsened. Despite these setbacks.
+  
+
+- Despite not seeing substantial progress in the key metrics, including accuracy, validation accuracy, loss, and validation loss rates, we haven't explored other evaluation metrics or techniques yet. Currently, our focus is on optimizing the model architecture and hyperparameters to improve overall performance. As we make advancements, we will consider exploring additional evaluation methods to ensure a comprehensive assessment of our watermelon seed classification model.
+
+  
+
 
 
 
