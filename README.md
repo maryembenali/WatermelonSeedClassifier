@@ -295,7 +295,11 @@ In contrast to the first architecture, which had an output layer with 10 units a
 - However, this version exhibited slow training progress and challenges with early stopping. We continue to refine the architecture and training process to achieve optimal watermelon seed classification results.
 - we added a **Dropout layer**
 - the result wasn't  as good as we expected:
-<p> <img width=600 src="IM2.PNG" > </p> </br>
+<p> <img width=600 src="IM2.png" > </p> </br>
+- Trainingset is not modified in this case ( no data augmentation) + drop out layer 
+<p> <img width=600 src="IM3.png" > </p> </br>
+
+
 
 
 
