@@ -42,6 +42,11 @@
    8.1 [Modeling](#modeling)
    8.2 [GUI](#gui)
 9. [Conclusion](#conclusion)
+    
+
+https://github.com/maryembenali/WatermelonSeedClassifier/assets/95877355/30cb741f-d549-45d9-9c71-06a60710103f
+
+
 
 ### Project context
 The Watermelon Seed Classifier project is a result of the Validation of Conception and Development project module at ENSI School for the second semester of the second year. </br> </br>
